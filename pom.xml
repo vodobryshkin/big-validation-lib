@@ -6,7 +6,20 @@
 
     <groupId>ru.ifmo.se</groupId>
     <artifactId>coordinates-validation-web-labs</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>coordinates-validation-web-labs</name>
+    <description>Coordinates validation utilities</description>
+    <url>https://github.com/vodobryshkin/big-validation-lib</url>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/vodobryshkin/big-validation-lib</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,12 +32,6 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.11.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fastcgi</groupId>
-            <artifactId>fcgi-lib</artifactId>
-            <version>1.0</version>
         </dependency>
 
         <dependency>
@@ -42,4 +49,13 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
