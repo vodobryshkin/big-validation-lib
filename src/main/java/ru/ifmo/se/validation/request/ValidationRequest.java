@@ -8,4 +8,4 @@ package ru.ifmo.se.validation.request;
  * @param y потенциальная координата по оси y.
  * @param r потенциальный радиус на координатной плоскости.
  */
-public record ValidationRequest(String x, String y, String r) {}
+public record ValidationRequest(String x, String y, String r) implements ValidationManagerOutRequest {}
