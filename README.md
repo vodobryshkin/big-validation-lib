@@ -16,8 +16,9 @@ https://se.ifmo.ru/courses/web), изначально планируя его п
 ## Возможности библиотеки
 - Создание обработчиков каждого из параметров запроса (x, y, r).
 - Автоматическое создание обработчиков из конфигурационного файла с помощью классов CoordinatesBordersParser 
-и ValidationManager.
-- ValidationManager для автоматической валидации данных.
+и классов-наследников ValidationManager.
+- ValidationCompleteManager для автоматической валидации данных (принимает и проверяет все параметры).
+- ValidationRManager для автоматической валидации данных (принимает все, проверяет только).
 
 ### Автоматическая валидация данных.
 Для автоматической валидации данных нужны следующие компоненты:
@@ -31,17 +32,46 @@ https://se.ifmo.ru/courses/web), изначально планируя его п
 Конфигурационный файл имеет следующую структуру:
 ```json
 {
+  "xType": "тип переменной x (array или including)",
+  "yType": "тип переменной x (array или including)",
+  "rType": "тип переменной x (array или including)",
+  ...информация о границах, исходя из строк выше
+}
+```
+
+Конкретные примеры:
+```json
+{
+  "xType": "including",
+  "yType": "array",
+  "rType": "array",
+
   "x": {
-    "leftIncludingBorder": "<левая граница для x>",
-    "rightIncludingBorder": "<правая граница для x>"
+    "leftIncludingBorder": "-5",
+    "rightIncludingBorder": "3"
+  },
+  "y": ["-2", "1.5", "-1", "-0.5", "0", "0.5", "1", "1.5", "2"],
+  "r": ["1", "1.5", "2", "2.5", "3"]
+}
+```
+
+```json
+{
+  "xType": "including",
+  "yType": "including",
+  "rType": "including",
+
+  "x": {
+    "leftIncludingBorder": "-5",
+    "rightIncludingBorder": "3"
   },
   "y": {
-    "leftIncludingBorder": "<левая граница для y>",
-    "rightIncludingBorder": "<правая граница для y>"
+    "leftIncludingBorder": "-3",
+    "rightIncludingBorder": "3"
   },
   "r": {
-    "leftIncludingBorder": "<левая граница для r>",
-    "rightIncludingBorder": "<правая граница для r>"
+    "leftIncludingBorder": "2",
+    "rightIncludingBorder": "5"
   }
 }
 ```
