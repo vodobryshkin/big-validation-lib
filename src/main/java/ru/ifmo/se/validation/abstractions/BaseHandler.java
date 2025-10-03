@@ -1,51 +1,20 @@
 package ru.ifmo.se.validation.abstractions;
 
 import lombok.Getter;
-import ru.ifmo.se.validation.request.ValidationRequest;
 
 import java.math.BigDecimal;
 
 /**
  * Абстрактный класс для упрощения создания конкретных обработчиков.
  */
-public abstract class BaseHandler implements Handler {
-    private Handler nextHandler;
-
+public abstract class BaseHandler extends NullHandler {
     @Getter
     private final BigDecimal leftIncludingBorder;
     @Getter
     private final BigDecimal rightIncludingBorder;
 
     public BaseHandler(BigDecimal leftIncludingBorder, BigDecimal rightIncludingBorder) {
-        nextHandler = null;
-
         this.leftIncludingBorder = leftIncludingBorder;
         this.rightIncludingBorder = rightIncludingBorder;
-    }
-
-    /**
-     * Устанавливает следующего обработчика в цепочке ответственностей.
-     *
-     * @param handler следующий обработчик в цепочке ответственностей.
-     */
-    @Override
-    public void setNext(Handler handler) {
-        nextHandler = handler;
-    }
-
-    /**
-     * Метод запускает обработку переданного запроса на валидацию следующим обработчиком.
-     * Если следующий обработчик существует, то запускается его обработка. В противном случае, возвращается истина (так как
-     * все нужные шаги были рассмотрены).
-     *
-     * @param validationRequest переданный запрос на валидацию.
-     * @return статус выполнения обработки.
-     */
-    @Override
-    public boolean handleNext(ValidationRequest validationRequest) {
-        if (nextHandler != null) {
-            return nextHandler.handle(validationRequest);
-        }
-        return true;
     }
 }

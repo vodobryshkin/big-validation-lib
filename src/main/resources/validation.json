@@ -1,4 +1,8 @@
 {
+  "xType": "including",
+  "yType": "including",
+  "rType": "including",
+
   "x": {
     "leftIncludingBorder": "-5",
     "rightIncludingBorder": "3"
