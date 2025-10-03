@@ -1,11 +1,10 @@
 package ru.ifmo.se.validation.managers;
 
-import ru.ifmo.se.validation.abstractions.BaseHandler;
+import ru.ifmo.se.validation.abstractions.NullHandler;
 import ru.ifmo.se.validation.parser.CoordinatesBordersParser;
 import ru.ifmo.se.validation.request.ValidationRequest;
 import lombok.Getter;
 import lombok.Setter;
-import ru.ifmo.se.validation.abstractions.Handler;
 
 import java.io.IOException;
 import java.util.List;
@@ -16,14 +15,14 @@ import java.util.List;
 public class ValidationManager {
     @Getter
     @Setter
-    private Handler startHandler;
+    private NullHandler startHandler;
 
     /**
      * Конструктор класса ValidationManager.
      * В нём создаются все необходимые обработчики и строится цепочка ответственностей.
      */
     public ValidationManager(String configName) throws IOException {
-        List<BaseHandler> baseHandlers = new CoordinatesBordersParser().parse(configName);
+        List<NullHandler> baseHandlers = new CoordinatesBordersParser().parse(configName);
 
         baseHandlers.get(0).setNext(baseHandlers.get(1));
         baseHandlers.get(1).setNext(baseHandlers.get(2));

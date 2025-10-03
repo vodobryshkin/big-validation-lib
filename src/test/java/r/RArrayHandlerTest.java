@@ -1,3 +1,5 @@
+package r;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.ifmo.se.validation.handlers.RArrayHandler;

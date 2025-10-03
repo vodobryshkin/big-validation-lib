@@ -1,8 +1,10 @@
 package ru.ifmo.se.validation.abstractions;
 
+import lombok.Getter;
 import ru.ifmo.se.validation.request.ValidationRequest;
 
 public abstract class NullHandler implements Handler {
+    @Getter
     private Handler nextHandler = null;
 
     /**

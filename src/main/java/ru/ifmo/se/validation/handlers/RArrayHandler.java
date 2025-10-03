@@ -1,5 +1,6 @@
 package ru.ifmo.se.validation.handlers;
 
+import lombok.ToString;
 import ru.ifmo.se.validation.abstractions.ArrayHandler;
 import ru.ifmo.se.validation.request.ValidationRequest;
 
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * Класс для обработки валидатором значения поступившего R.
  */
+@ToString
 public class RArrayHandler extends ArrayHandler {
     public RArrayHandler(List<BigDecimal> validationValues) {
         super(validationValues);

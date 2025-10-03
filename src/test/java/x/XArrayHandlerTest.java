@@ -1,3 +1,5 @@
+package x;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.ifmo.se.validation.handlers.XArrayHandler;

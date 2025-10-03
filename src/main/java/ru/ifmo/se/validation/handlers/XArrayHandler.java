@@ -1,5 +1,6 @@
 package ru.ifmo.se.validation.handlers;
 
+import lombok.ToString;
 import ru.ifmo.se.validation.abstractions.ArrayHandler;
 import ru.ifmo.se.validation.request.ValidationRequest;
 
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * Класс для обработки валидатором значения поступившего X (по массиву).
  */
+@ToString
 public class XArrayHandler extends ArrayHandler {
     public XArrayHandler(List<BigDecimal> validationValues) {
         super(validationValues);
@@ -25,8 +27,8 @@ public class XArrayHandler extends ArrayHandler {
         BigDecimal x = new BigDecimal(request.x());
 
         for (BigDecimal val: getValidationValues()) {
-            if (x.equals(val)) {
-                return true;
+            if (x.compareTo(val) == 0) {
+                return handleNext(request);
             }
         }
 
