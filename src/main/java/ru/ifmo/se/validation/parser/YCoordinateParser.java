@@ -7,8 +7,8 @@ import com.google.gson.JsonObject;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import ru.ifmo.se.validation.abstractions.NullHandler;
-import ru.ifmo.se.validation.handlers.YArrayHandler;
-import ru.ifmo.se.validation.handlers.YHandler;
+import ru.ifmo.se.validation.handlers.array.YArrayHandler;
+import ru.ifmo.se.validation.handlers.full.YHandler;
 import ru.ifmo.se.validation.parser.interfaces.CoordinateParser;
 
 import java.math.BigDecimal;

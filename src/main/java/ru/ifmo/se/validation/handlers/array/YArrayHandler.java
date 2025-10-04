@@ -1,4 +1,4 @@
-package ru.ifmo.se.validation.handlers;
+package ru.ifmo.se.validation.handlers.array;
 
 import lombok.ToString;
 import ru.ifmo.se.validation.abstractions.ArrayHandler;

@@ -1,4 +1,4 @@
-package ru.ifmo.se.validation.handlers;
+package ru.ifmo.se.validation.handlers.array;
 
 import lombok.ToString;
 import ru.ifmo.se.validation.abstractions.ArrayHandler;
@@ -8,11 +8,11 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * Класс для обработки валидатором значения поступившего X (по массиву).
+ * Класс для обработки валидатором значения поступившего R.
  */
 @ToString
-public class XArrayHandler extends ArrayHandler {
-    public XArrayHandler(List<BigDecimal> validationValues) {
+public class RArrayHandler extends ArrayHandler {
+    public RArrayHandler(List<BigDecimal> validationValues) {
         super(validationValues);
     }
 
@@ -24,11 +24,11 @@ public class XArrayHandler extends ArrayHandler {
      */
     @Override
     public boolean handle(ValidationRequest request) {
-        BigDecimal x = new BigDecimal(request.x());
+        BigDecimal r = new BigDecimal(request.r());
 
         for (BigDecimal val: getValidationValues()) {
-            if (x.compareTo(val) == 0) {
-                return handleNext(request);
+            if (r.equals(val)) {
+                return true;
             }
         }
 

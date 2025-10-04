@@ -1,4 +1,4 @@
-package ru.ifmo.se.validation.handlers;
+package ru.ifmo.se.validation.handlers.full;
 
 import ru.ifmo.se.validation.request.ValidationRequest;
 import ru.ifmo.se.validation.abstractions.BaseHandler;
@@ -6,15 +6,15 @@ import ru.ifmo.se.validation.abstractions.BaseHandler;
 import java.math.BigDecimal;
 
 /**
- * Класс для обработки валидатором значения поступившего X.
+ * Класс для обработки валидатором значения поступившего R.
  */
-public class XHandler extends BaseHandler {
-    public XHandler(BigDecimal leftIncludingBorder, BigDecimal rightIncludingBorder) {
+public class RHandler extends BaseHandler {
+    public RHandler(BigDecimal leftIncludingBorder, BigDecimal rightIncludingBorder) {
         super(leftIncludingBorder, rightIncludingBorder);
     }
 
     /**
-     * Метод выполняет обработку значения X из переданного запроса на валидацию.
+     * Метод выполняет обработку значения R из переданного запроса на валидацию.
      * Если метод удовлетворяет условию, то происходит переход на следующий обработчик.
      * В противном случае, возвращается false (завершилось неправильно).
      *
@@ -24,10 +24,10 @@ public class XHandler extends BaseHandler {
     @Override
     public boolean handle(ValidationRequest request) {
         try {
-            BigDecimal x = new BigDecimal(request.x());
+            BigDecimal r = new BigDecimal(request.r());
 
-            if (x.compareTo(getLeftIncludingBorder()) >= 0
-                    && x.compareTo(getRightIncludingBorder()) <= 0) {
+            if (r.compareTo(getLeftIncludingBorder()) >= 0
+                    && r.compareTo(getRightIncludingBorder()) <= 0) {
                 return handleNext(request);
             }
 

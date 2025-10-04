@@ -2,7 +2,7 @@ package x;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.ifmo.se.validation.handlers.XArrayHandler;
+import ru.ifmo.se.validation.handlers.array.XArrayHandler;
 import ru.ifmo.se.validation.request.ValidationRequest;
 
 import java.math.BigDecimal;

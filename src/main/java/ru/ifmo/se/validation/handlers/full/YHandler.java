@@ -1,4 +1,4 @@
-package ru.ifmo.se.validation.handlers;
+package ru.ifmo.se.validation.handlers.full;
 
 import ru.ifmo.se.validation.request.ValidationRequest;
 import ru.ifmo.se.validation.abstractions.BaseHandler;

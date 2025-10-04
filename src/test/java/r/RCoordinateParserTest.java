@@ -2,7 +2,7 @@ package r;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.ifmo.se.validation.handlers.RArrayHandler;
+import ru.ifmo.se.validation.handlers.array.RArrayHandler;
 import ru.ifmo.se.validation.parser.RCoordinateParser;
 import ru.ifmo.se.validation.request.ValidationRequest;
 
