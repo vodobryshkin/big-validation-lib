@@ -6,7 +6,7 @@
 
     <groupId>ru.ifmo.se</groupId>
     <artifactId>coordinates-validation-web-labs</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <packaging>jar</packaging>
 
     <name>coordinates-validation-web-labs</name>
