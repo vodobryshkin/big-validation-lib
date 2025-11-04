@@ -32,7 +32,7 @@ public class RCoordinateParser implements CoordinateParser {
         Gson gson = new Gson();
         JsonObject obj = gson.fromJson(jsonData, JsonObject.class);
 
-        String rType = obj.get("yType").getAsString();
+        String rType = obj.get("rType").getAsString();
 
         if (rType.equals("including")) {
             JsonObject objR = obj.get("r").getAsJsonObject();
