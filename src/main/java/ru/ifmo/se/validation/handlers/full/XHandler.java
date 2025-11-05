@@ -24,7 +24,7 @@ public class XHandler extends BaseHandler {
     @Override
     public boolean handle(ValidationRequest request) {
         try {
-            BigDecimal x = new BigDecimal(request.x());
+            BigDecimal x = new BigDecimal(request.getX());
 
             if (x.compareTo(getLeftIncludingBorder()) >= 0
                     && x.compareTo(getRightIncludingBorder()) <= 0) {

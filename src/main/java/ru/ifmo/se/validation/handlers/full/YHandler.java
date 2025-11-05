@@ -24,7 +24,7 @@ public class YHandler extends BaseHandler {
     @Override
     public boolean handle(ValidationRequest request) {
         try {
-            BigDecimal y = new BigDecimal(request.y());
+            BigDecimal y = new BigDecimal(request.getY());
 
             if (y.compareTo(getLeftIncludingBorder()) >= 0
                     && y.compareTo(getRightIncludingBorder()) <= 0) {

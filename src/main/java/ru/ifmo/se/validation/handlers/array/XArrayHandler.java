@@ -24,7 +24,7 @@ public class XArrayHandler extends ArrayHandler {
      */
     @Override
     public boolean handle(ValidationRequest request) {
-        BigDecimal x = new BigDecimal(request.x());
+        BigDecimal x = new BigDecimal(request.getX());
 
         for (BigDecimal val: getValidationValues()) {
             if (x.compareTo(val) == 0) {

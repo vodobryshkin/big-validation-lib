@@ -12,7 +12,7 @@ public class RIsNumberHandler extends NullHandler {
     @Override
     public boolean handle(ValidationRequest request) {
         try {
-            new BigDecimal(request.r());
+            new BigDecimal(request.getR());
 
             return handleNext(request);
         } catch (NumberFormatException e) {

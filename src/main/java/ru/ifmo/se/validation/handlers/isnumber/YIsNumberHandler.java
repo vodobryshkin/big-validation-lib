@@ -12,7 +12,7 @@ public class YIsNumberHandler extends NullHandler {
     @Override
     public boolean handle(ValidationRequest request) {
         try {
-            new BigDecimal(request.y());
+            new BigDecimal(request.getY());
 
             return handleNext(request);
         } catch (NumberFormatException e) {
